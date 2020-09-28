@@ -1,0 +1,12 @@
+C:\ElevenFiftyProjects\KomodoCafe\KomodoCafe_Repository\bin\Debug\KomodoCafe_Repository.dll
+C:\ElevenFiftyProjects\KomodoCafe\KomodoCafe_Repository\bin\Debug\KomodoCafe_Repository.pdb
+C:\ElevenFiftyProjects\KomodoCafe\KomodoCafe_Repository\obj\Debug\KomodoCafe_Repository.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\KomodoCafe\KomodoCafe_Repository\obj\Debug\KomodoCafe_Repository.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\KomodoCafe\KomodoCafe_Repository\obj\Debug\KomodoCafe_Repository.dll
+C:\ElevenFiftyProjects\KomodoCafe\KomodoCafe_Repository\obj\Debug\KomodoCafe_Repository.pdb
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\KomodoCafe_Repository\bin\Debug\KomodoCafe_Repository.dll
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\KomodoCafe_Repository\bin\Debug\KomodoCafe_Repository.pdb
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\KomodoCafe_Repository\obj\Debug\KomodoCafe_Repository.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\KomodoCafe_Repository\obj\Debug\KomodoCafe_Repository.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\KomodoCafe_Repository\obj\Debug\KomodoCafe_Repository.dll
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\KomodoCafe_Repository\obj\Debug\KomodoCafe_Repository.pdb
