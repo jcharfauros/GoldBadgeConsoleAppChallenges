@@ -15,7 +15,7 @@ namespace _02_KomodoClaims_Repo
     public class ClaimsContent
     {
         public int ClaimID { get; set; }
-        public ClaimType ClaimType { get; }
+        public ClaimType ClaimType { get; set; }
         public string Description { get; set; }
         public double ClaimAmount { get; set; }
         public DateTime DateOfAccident { get; set; }

@@ -8,34 +8,20 @@ namespace _02_KomodoClaims_Repo
 {
     public class ClaimsRepository
     {
-        //private Queue<ClaimsContent> _listOfClaimsInQue = new Queue<ClaimsContent>();
-        
-        private List<ClaimsContent> _listOfClaimsContent = new List<ClaimsContent>();
-
-        //Get the list of call the claims
-        public void AddClaimsToList(ClaimsContent content)
+        private Queue<ClaimsContent> _listOfClaimsInQue = new Queue<ClaimsContent>();
+                               
+        // view claims
+        public Queue<ClaimsContent> ReturnAllClaims()
         {
-            _listOfClaimsContent.Add(content);
-        }
-        
-        //Queue list
-        //public Queue<ClaimsContent> ReturnAllClaims()
-        //{
-        //    return _listOfClaimsInQue;
-        //}
-        
-        public List<ClaimsContent> Returnallclaims()
-        {
-            return _listOfClaimsContent;
+            return _listOfClaimsInQue;
         }
 
+        // take care of next
 
-
-        //Take care of the next claim
-        //NextClaim
-
-
-        //Create a new claim
-        //EnterANewClaim
-    }
+        // create new claim
+        public void EnterANewClaim(ClaimsContent newClaim)
+        {
+            _listOfClaimsInQue.Enqueue(newClaim);
+        }
+    } 
 }
