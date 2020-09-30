@@ -37,14 +37,14 @@ namespace _02_KomodoClaims
                     case "one":                    
                         ViewAllClaims();
                         break;
-                    //NextClaim();
                     case "2":
                     case "two":                    
-                        EnterANewClaim();
+                    //NextClaim();
                         break;
                     case "3":
-                    case "three":                    
-                    //exit    
+                    case "three":
+                        EnterANewClaim();
+                        break;                    
                     case "4":
                     case "four":                    
                         Console.WriteLine("You are now exiting the program.");
@@ -60,25 +60,30 @@ namespace _02_KomodoClaims
                 Console.Clear();
             }
         }
-
-        //view all claims
+                
         private void ViewAllClaims()
         {
             Console.Clear();
-            Console.WriteLine($"\n{"ClaimID"} {"Type"} {"Description"} {"Amount"} {"DateOfAccident"} {"DateOfClaim"} {"IsValid"}\n");
+            Console.WriteLine($"\n{"ClaimID"} " +
+                              $"{"Type", 5} " +
+                              $"{"Description", -20} " +
+                              $"{"Amount", -10}" +
+                              $"{"DateOfAccident", -10} " +
+                              $"{"DateOfClaim", -10} " +
+                              $"{"IsValid", -5}\n");
             
             Queue<ClaimsContent> listClaimsQueue = _claimContentRepo.ReturnAllClaims();
             
             foreach (ClaimsContent claimsContent in listClaimsQueue)
-            {
+            {   //string interpolation formatting!!! HUZZAH! 
                 Console.WriteLine(
-                        $"ClaimID: {claimsContent.ClaimID}",
-                        $"Type: {claimsContent.ClaimType}",
-                        $"Description: {claimsContent.Description}",
-                        $"Amount: {claimsContent.ClaimAmount}",
-                        $"DateOfAccident: {claimsContent.DateOfAccident}",
-                        $"DateOfClaim: {claimsContent.DateOfClaim}",
-                        $"IsValid: {claimsContent.IsVaild}");
+                        $"{claimsContent.ClaimID, 3}" +
+                        $"{claimsContent.ClaimType, 9}" +
+                        $"{claimsContent.Description, 20}" +
+                        $"{claimsContent.ClaimAmount, 10:C}" +
+                        $"{claimsContent.DateOfAccident, -15:MM/dd/yyyy}" +
+                        $"{claimsContent.DateOfClaim, -15:MM/dd/yyyy}" +
+                        $"{claimsContent.IsVaild, 5}");
             }            
         }
         // take care of next claim
@@ -88,18 +93,16 @@ namespace _02_KomodoClaims
         }
         // create new claim
         private void EnterANewClaim()
-        {
+        {   
             Console.Clear();
             ClaimsContent newClaim = new ClaimsContent();
-
-            //claimID
-            Console.WriteLine("Enter the ID for the new claim:");
+                        
+            Console.WriteLine("Enter the ID for the new claim:\n");
             string claimIDString = Console.ReadLine();
             int claimIdInt = int.Parse(claimIDString);
             newClaim.ClaimID = claimIdInt;
-
-            //claimType
-            Console.WriteLine("Enter the claim type number for the new claim:\n" +
+                        
+            Console.WriteLine("\nEnter the claim type number for the new claim:\n" +
                 "1. Car\n" +
                 "2. Home\n" +
                 "3. Theft\n\n");
@@ -107,29 +110,24 @@ namespace _02_KomodoClaims
             string claimTypeAsString = Console.ReadLine();
             int claimAsInt = int.Parse(claimTypeAsString);
             newClaim.ClaimType = (ClaimType)claimAsInt;
-
-            //description
-            Console.WriteLine("Enter a description for the new claim:");
+                        
+            Console.WriteLine("\nEnter a description for the new claim:\n");
             newClaim.Description = Console.ReadLine();
-
-            //amount ERROR FIXED
-            Console.WriteLine("Enter the new claim amount:");
+                        
+            Console.WriteLine("\nEnter the new claim amount:\n");
             string claimAmountString = Console.ReadLine();
             double amountAsInt = double.Parse(claimAmountString);
             newClaim.ClaimAmount = amountAsInt;
-            
-            //date of accident ERROR FIXED
-            Console.WriteLine("Enter the date of the accident (mm/dd/yyyy):");
-            DateTime accidentDate = DateTime.Parse(Console.ReadLine());            
+                        
+            Console.WriteLine("\nEnter the date of the accident (mm/dd/yyyy):\n");
+            DateTime accidentDate = DateTime.Parse(Console.ReadLine());                      
             newClaim.DateOfAccident = accidentDate;
-
-            //date of claim ERROR FIXED
-            Console.WriteLine("Enter the date of the new claim (mm/dd/yyyy):");
+                        
+            Console.WriteLine("\nEnter the date of the new claim (mm/dd/yyyy):\n");
             DateTime claimDate = DateTime.Parse(Console.ReadLine());
             newClaim.DateOfClaim = claimDate;
-
-            //is valid
-            Console.WriteLine("Is this new claim valid? (y/n)");
+                        
+            Console.WriteLine("\nIs this new claim valid? (y/n)\n");
             string claimIsValid = Console.ReadLine().ToLower();
             if(claimIsValid == "y")
             {
@@ -140,8 +138,8 @@ namespace _02_KomodoClaims
                 newClaim.IsVaild = false;
             }
 
-            _claimContentRepo.EnterANewClaim(newClaim);
-            
+            _claimContentRepo.EnterANewClaim(newClaim);                                   
+
         }
 
         //Seed method
