@@ -88,26 +88,26 @@ namespace _02_KomodoClaims
         // take care of next claim
         private void NextClaim()
         {
-            Console.Clear();
+            Console.Clear();            
             bool keepRunning = true;
             while (keepRunning)
             {                
-                _claimContentRepo.NextClaim();
-                Console.WriteLine("\n\nDo you want to deal with this claim now? (y/n)\n");
-                
+                _claimContentRepo.NextClaim();                
+                Console.WriteLine("\n\nDo you want to deal with this claim now? (y/n or exit)\n");                
                 string input = Console.ReadLine().ToLower();
                 Console.Clear();
                 switch (input)
                 {
                     case "y":
                     case "yes":
-                        _claimContentRepo.NextClaim();
-                        Console.Clear();
-                        Console.WriteLine("\n\nHere are the details, hit any key to continue:\n");
+                        _claimContentRepo.NextClaim();                        
                         Console.ReadKey();
                         break;
                     case "n":
                     case "no":
+                        _claimContentRepo.NextInQueue();                        
+                        break;
+                    case "exit":
                         keepRunning = false;
                         Console.WriteLine("As you wish. Goodbye!");
                         break;
