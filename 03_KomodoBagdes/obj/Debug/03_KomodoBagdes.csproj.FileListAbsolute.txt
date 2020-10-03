@@ -1,0 +1,7 @@
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\03_KomodoBagdes\bin\Debug\03_KomodoBagdes.exe.config
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\03_KomodoBagdes\bin\Debug\03_KomodoBagdes.exe
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\03_KomodoBagdes\bin\Debug\03_KomodoBagdes.pdb
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\03_KomodoBagdes\obj\Debug\03_KomodoBagdes.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\03_KomodoBagdes\obj\Debug\03_KomodoBagdes.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\03_KomodoBagdes\obj\Debug\03_KomodoBagdes.exe
+C:\ElevenFiftyProjects\GoldBadgeConsoleChallenges\03_KomodoBagdes\obj\Debug\03_KomodoBagdes.pdb

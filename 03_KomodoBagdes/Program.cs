@@ -10,6 +10,8 @@ namespace _03_KomodoBagdes
     {
         static void Main(string[] args)
         {
+            BadgeUI badgeProgram = new BadgeUI();
+            badgeProgram.Run();
         }
     }
 }

@@ -8,36 +8,56 @@ namespace _03_KomodoBadges_Repository
 {
     public class BadgeContentRepository
     {
-        //found dictionary examples on microsoft, geeksforgeeks, stackoverflow,
-        //but i don't understand it. ASK SOMEONE or more googling. 
-        public Dictionary<int, string> _listOfBadges = new Dictionary<int, string>();
+        public Dictionary<int, BadgeContent> _badgeList = new Dictionary<int, BadgeContent>();
+
+        public List<BadgeContent> GetBadgeList()
+        {
+            var badgeList = _badgeList.Values.ToList();
+            return badgeList;
+
+        }
         // CREATE NEW BADGE
-        // does not like the .Add, error wants (int key, string value)
-        public void AddBadgeToList(BadgeContent badge)
+        public void CreateBadge(int badgeID, List<string> doorName, string badgeName)
         {
-            _listOfBadges.Add(badge.BadgeID, badge.BadgeName);
-                            //WHY, i want to add badge has access
-            //_listOfBadges.Add(badge.AccessToDoor);            
+            BadgeContent newBadge = new BadgeContent(badgeID, doorName, badgeName);
+            _badgeList.Add(newBadge.BadgeID, newBadge);
         }
-        // READ/SHOW --show list of all badge and door access
-        public Dictionary<int, string> GetBadgeList()
-        {
-            return _listOfBadges;
-        }
+
         // UPDATE doors on badge
-        public void DoorAccess(int badgeID, string accessToDoor)
+        public void UpdateAccess(int badgeUpdate, BadgeContent badgeUpdated)
         {
-            //how to put in dictionary list?
-            List<string> doorAccess = _listOfBadges;
-                doorAccess.Add(accessToDoor);
+            BadgeContent updateBadge = GetBadgeID(badgeUpdate);
+            updateBadge.DoorName = badgeUpdated.DoorName;
         }
-        // DELETE all doors on existing badge
-        // do i need to add bool like in other projects?
-        public void RemoveDoorFromBadge(int badgeID, string accessToDoor)
+
+        // DELETE all doors on existing badge        
+        public void deleteaccess(int deleteBadge)
         {
-            //how to put in dictionary list?
-            List<string> doorAccess = _listOfBadges;
-                doorAccess.Remove(accessToDoor);
+            BadgeContent badgeDelete = GetBadgeID(deleteBadge);
+            if (badgeDelete.BadgeID == deleteBadge)
+            {
+                badgeDelete.DoorName = new List<string>() { };
+            }
+            else
+            {
+                Console.WriteLine("There is no badge with that ID.");
+            }
         }
+
+        //helper
+        private BadgeContent GetBadgeID(int badge)
+        {
+            BadgeContent badge1;
+            if (_badgeList.ContainsKey(badge))
+            {
+                badge1 = _badgeList[badge];
+                return badge1;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
     }
 }

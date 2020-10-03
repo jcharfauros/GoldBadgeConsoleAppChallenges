@@ -17,7 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_KomodoClaims_Repo", "02_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_KomodoBadges_Repository", "03_KomodoBadges_Repository\03_KomodoBadges_Repository.csproj", "{45DD81FC-B11E-45E5-A049-1E9C12273F31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_KomodoBagdes", "03_KomodoBagdes\03_KomodoBagdes.csproj", "{7039A399-4248-40D5-8866-655A54D4E683}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_KomodoBadges", "03_KomodoBagdes\03_KomodoBadges.csproj", "{7039A399-4248-40D5-8866-655A54D4E683}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45DD81FC-B11E-45E5-A049-1E9C12273F31} = {45DD81FC-B11E-45E5-A049-1E9C12273F31}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_KomodoBadges_Test", "03_KomodoBadges_Test\03_KomodoBadges_Test.csproj", "{1F619226-6335-45C8-93B1-5C6ECAC5A678}"
 EndProject
